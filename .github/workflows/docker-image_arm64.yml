@@ -1,4 +1,4 @@
-name: docker-x-ui
+name: docker-x-ui_arm64
 
 on:
   push:
