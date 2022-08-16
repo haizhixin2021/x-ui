@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends -y ca-certifica
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR /root
 COPY --from=builder  /root/main /root/x-ui
+RUN mkdir /root/bin
 RUN apt-get update && apt-get install wget -y
 RUN apt install unzip
 RUN wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-arm64-v8a.zip
