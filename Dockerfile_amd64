@@ -1,0 +1,16 @@
+FROM golang:latest AS builder
+WORKDIR /root
+COPY . .
+RUN go build main.go
+
+
+FROM debian:11-slim
+RUN apt-get update && apt-get install -y --no-install-recommends -y ca-certificates \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+WORKDIR /root
+COPY --from=builder  /root/main /root/x-ui
+RUN mkdir /root/bin && apt-get update && apt-get install wget -y && apt install unzip
+RUN wget https://github.com/FranzKafkaYu/x-ui/releases/download/0.3.3.16-0814/x-ui-linux-amd64.tar.gz && mkdir x-ui-linux-amd64 && tar zxvf x-ui-linux-amd64.tar.gz -C x-ui-linux-amd64
+RUN cp x-ui-linux-amd64/x-ui/x-ui /root/ && cp x-ui-linux-amd64/x-ui/bin/* /root/bin
+VOLUME [ "/etc/x-ui" ]
+CMD [ "./x-ui" ]
