@@ -1,4 +1,4 @@
-name: x-ui-ci
+name: docker-x-ui
 
 on:
   push:
