@@ -146,6 +146,7 @@ xray 状态: 运行
 - Debian 8+
 
 # 变更记录  
+- 2022.12.07：添加设备并发限制;细化tls配置,支持minVersion、maxVersion与cipherSuites选择    
 - 2022.11.14：添加xtls-rprx-vision流控选项
 - 2022.10.23：实现全英文支持;增加批量导出分享链接功能；优化页面细节与Telegram通知    
 - 2022.08.11：实现Vmess/Vless/Trojan单端口多用户；增加CPU使用超限提醒  
@@ -178,6 +179,7 @@ xray 状态: 运行
 - [搬瓦工GIA高端线路](https://bandwagonhost.com/aff.php?aff=65703),仅推荐购买GIA套餐      
 - [Cloudcone性价比主机提供商](https://app.cloudcone.com/?ref=7536)  
 - [Spartan三网4837性价比主机](https://billing.spartanhost.net/aff.php?aff=1875)  
+- USDT TRC20:`TYZ5MAq5YvtCMsjQDq1TJZnMWmjMVGLk2T`  
 
 ## Stargazers over time
 
